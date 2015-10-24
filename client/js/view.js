@@ -14,9 +14,9 @@ var canvas = document.getElementById('c');
 console.log(canvas);
 var context = canvas.getContext('2d');
 
-var worker = new Worker("./js/render.js");
+//var worker = new Worker("./js/render.js");
 //③
-worker.onmessage = draw;
+//worker.onmessage = draw;
 
 client.on('open', function(){
   stream = client.createStream({room: room, type: 'read'});
@@ -35,7 +35,7 @@ client.on('open', function(){
 });
 
 //④
-function draw(event) {
-  var finalt = event.data.t;
-  context.putImageData(finalt, 0, 0);
-}
+// function draw(event) {
+//   var finalt = event.data.t;
+//   context.putImageData(finalt, 0, 0);
+// }

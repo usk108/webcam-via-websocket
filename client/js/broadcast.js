@@ -18,8 +18,9 @@ client.on('open', function(){
 
 
 // Not showing vendor prefixes or code that works cross-browser.
-navigator.webkitGetUserMedia({video: true}, function(stream) {
-	video.src = window.webkitURL.createObjectURL(stream);
+//? ここのstreamはもしかして，上のvar streamと関係ない？
+navigator.webkitGetUserMedia({video: true}, function(astream) {
+	video.src = window.webkitURL.createObjectURL(astream);
     setInterval(myStreaming, 50);
 
 }, function() {alert('fail');});
